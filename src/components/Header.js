@@ -113,7 +113,6 @@ const Header = (props) => {
               variant="h6"
               noWrap
               component="a"
-              href="/"
               sx={{
                 mt: -5,
                 ml: -3,

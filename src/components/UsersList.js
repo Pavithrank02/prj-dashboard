@@ -15,7 +15,7 @@ export default function UsersList() {
   // const [id, setId] = useState("");
   const navigate = useNavigate();
 
-  console.log(users);
+  // console.log(users);
 
 
   const fetchAPI = async () => {
@@ -28,7 +28,7 @@ export default function UsersList() {
     fetchAPI()
   })
   const handleSubmit = (id) => {
-    navigate(`/home/profile/${id}`)
+    navigate(`/profile/${id}`)
   }
 
   return (

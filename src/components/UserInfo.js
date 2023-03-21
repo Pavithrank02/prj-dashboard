@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { FETCHAPI } from '../utils/constants';
 import { Grid, Typography } from '@mui/material';
+import img1 from '../assets/image/map.PNG'
 
 // const userdetails = ['Username :', 'email :', 'Phone :', 'Website :'];
 // const companyDetails = ['Name :', 'catchphrase :', 'bs :']
@@ -13,24 +14,6 @@ const UserInfo = (props) => {
   const { id } = props.id
   // const { users } = user
 
-  const dummy = [
-    [
-      "street",
-      "Kulas Light"
-    ],
-    [
-      "suite",
-      "Apt. 556"
-    ],
-    [
-      "city",
-      "Gwenborough"
-    ],
-    [
-      "zipcode",
-      "92998-3874"
-    ]
-  ]
   useEffect(() => {
     onLoad()
   }, [])
@@ -49,7 +32,7 @@ const UserInfo = (props) => {
     setUser(result)
   }
   let info = user && Object.entries(user.company)
-  let profile = user && Object.entries(user)
+  // console.log("v",obj)
   let add = user && Object.entries(user.address)
   // console.log("info", profile)
   return (
@@ -62,30 +45,41 @@ const UserInfo = (props) => {
               <Typography sx={{ mt: 1, ml: 11, display: 'flex', alignItems: 'center', fontSize: 22, fontWeight: 600, color: '#696969' }}>
                 {user.name}
               </Typography>
-              {/* {profile && profile.filter((e) => {
-                if (e.length<2) {
-                  return e;
-                } else {  
-                  // console.log(e)
-                }
-              }).map(([key, value]) => {
-                console.log("key",key, value)
-                if(value.length < 100){
-
-                  return (
-                    <>
-                      <Typography sx={{ padding: '7px', justifyContent: 'left', fontSize: 20, color: 'grey' }}>{key}:</Typography>
-                      <Typography sx={{ padding: '7px', justifyContent: 'left', fontSize: 20, color: 'grey', fontWeight: 600 }}>{value}</Typography>
-                    </>
-                  )
-
-                }else{
-                  console.log()
-                }
-              })} */}
+              <Grid sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>Username :</Typography>
+                    </Grid>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{user.username}</Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>email :</Typography>
+                    </Grid>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{user.email}</Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>Phone :</Typography>
+                    </Grid>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{user.phone}</Typography>
+                    </Grid>
+                  </Grid>
+                  <Grid sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>Website :</Typography>
+                    </Grid>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{user.website}</Typography>
+                    </Grid>
+                  </Grid>
               {/* {userdetails.map((e) => {
                 return <Typography sx={{ padding: '8px', justifyContent: 'left', fontSize: 20, color: 'grey' }}>{e}</Typography>
-              })} */}
+              })}*/}
               <Typography sx={{ mt: 1, ml: 11, display: 'flex', alignItems: 'center', fontSize: 22, fontWeight: 600, color: 'grey' }}>
                 Company
               </Typography>
@@ -97,12 +91,11 @@ const UserInfo = (props) => {
                       <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>{key}:</Typography>
                     </Grid>
                     <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
-                      <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey', fontWeight: 600 }}>{value}</Typography>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{value}</Typography>
                     </Grid>
                   </Grid>
                 )
               })}
-              
               {/* {companyDetails.map((e) => {
                 return <Typography sx={{ padding: '8px', justifyContent: 'left', fontSize: 20, color: 'grey' }}>{e}</Typography>
               })} */}
@@ -112,17 +105,23 @@ const UserInfo = (props) => {
                 Address:
               </Typography>
               {add && add.map(([key, value]) => {
-                console.log("val",value)
-                if(typeof value === 'string'){
+                console.log("val", value)
+                if (typeof value === 'string') {
                   return (
                     <Grid sx={{ display: 'flex', flexDirection: 'row' }}>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
                       <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>{key}:</Typography>
-                      <Typography sx={{ padding: '7px', fontSize: 20, color: 'grey' }}>{value}</Typography>
                     </Grid>
+                    <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
+                      <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{value}</Typography>
+                    </Grid>
+                  </Grid>
                   )
                 }
               })}
+                 <img src={img1} alt="gshs" style={{ height: '400px', width: '600px', zIndex: -100 }} />
             </Grid>
+         
           </Grid>
         </Grid>
 

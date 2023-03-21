@@ -11,7 +11,7 @@ const Home = (props) => {
   // console.log("id", userId)
   // console.log("home", user);
   return (
-    <Grid sx={{ width: 1 }}>
+    <Grid sx={{ width: 1, maxWidth:'1200', minWidth: 400 }}>
       <Grid display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={1}>
         <Grid gridColumn="span 3" sx={{ marginTop: 5, marginLeft: 6 }}>
           <Sidebar />

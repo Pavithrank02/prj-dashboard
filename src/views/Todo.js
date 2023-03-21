@@ -8,6 +8,7 @@ import Chatbot from '../components/Chatbot';
 
 const Todo = () => {
   const userId = useParams();
+  console.log("to", userId);
   return (
     <Grid sx={{ width: 1 }}>
       <Grid display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={1}>

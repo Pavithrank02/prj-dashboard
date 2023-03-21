@@ -21,9 +21,8 @@ const Logout = (props) => {
   const navigate = useNavigate();
   const user = useAPI()
   const handleSubmit = (id) => {
-    navigate(`/home/${id}`)
+    navigate(`/profile/${id}`)
     window.location.reload()
-
   }
 
   return (
