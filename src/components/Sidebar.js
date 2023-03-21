@@ -7,11 +7,7 @@ import { useHistory, useLocation } from 'react-router';
 
 const Sidebar = () => {
   const userId = useParams();
-
-  // const history = useHistory();
-  const location = useLocation();
-  // console.log("history", history)
-  console.log("location", location)
+  const location = useLocation(); //using location to navigate
   const path = location.pathname
   const { id, profile } = userId
   console.log("loc", userId);
@@ -32,6 +28,7 @@ const Sidebar = () => {
       </Grid>
     )
   }
+  //Displaying and rendering sidebar component.
   return (
     <Grid sx={{
       display: 'flex', flexDirection: 'column', background: 'linear-gradient(180deg, #4d4dff, #8533ff)',

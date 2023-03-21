@@ -12,16 +12,11 @@ import { FETCHAPI } from '../utils/constants';
 export default function UsersList() {
 
   const [users, setUser] = useState("");
-  // const [id, setId] = useState("");
   const navigate = useNavigate();
-
-  // console.log(users);
-
 
   const fetchAPI = async () => {
     const data = await fetch(FETCHAPI);
     const res = await data.json()
-    // console.log(res)
     setUser(res)
   }
   useEffect(() => {

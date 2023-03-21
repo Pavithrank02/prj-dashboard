@@ -13,25 +13,20 @@ import { Grid } from '@mui/material';
 
 
 const Header = (props) => {
-  const {name} = props
-  // console.log(props.name)
+  const { name } = props
   const { id } = props.id
-  // console.log('sss',name)
   const [toggle, setToggle] = useState(false);
   const [user, setUser] = useState("");
-  // console.log("ffs", user)
 
   useEffect(() => {
     fetchAPI()
   })
 
   const fetchAPI = async () => {
-    const data = await fetch(FETCHAPI);
+    const data = await fetch(FETCHAPI); //Fetch API
     const res = await data.json()
-    // console.log(res);
     const result = res.users.find(i => {
-      // console.log(i.id)
-      if (i.id == id) {
+      if (i.id == id) {   // Check condition to match ID
         return i
       }
     }
@@ -44,11 +39,11 @@ const Header = (props) => {
     setToggle(!toggle)
 
   }
-  if (toggle === true) {
+  if (toggle === true) { //toggle state
     return (
       <Grid>
-        <Grid position='absolute' sx={{ marginTop: 5, marginLeft: 100, width: 320 }}>
-          <Logout data = {user}/>
+        <Grid position='absolute' sx={{ marginTop: 5, marginLeft: 100, width: 320, xs: 4, sm: 8, md: 12 }} >
+          <Logout data={user} />
         </Grid>
         <Grid >
           <AppBar position='static' color='transparent' elevation={1} sx={{ width: 1150 }}>
@@ -70,13 +65,13 @@ const Header = (props) => {
                     justifyContent: 'flex-start'
                   }}
                 >
-                    {name}
+                  {name}
                 </Typography>
-                  <Tooltip title="Profile">
-                    <IconButton onClick={handleUserinfo} sx={{ mt: -6, ml: '50vw' }}>
-                      <Avatar alt="Remy Sharp" src={user.profilepicture} sx={{ width: "35px", height: '35px' }} />
-                    </IconButton>
-                  </Tooltip>
+                <Tooltip title="Profile">
+                  <IconButton onClick={handleUserinfo} sx={{ mt: -6, ml: '50vw' }}>
+                    <Avatar alt="Remy Sharp" src={user.profilepicture} sx={{ width: "35px", height: '35px' }} />
+                  </IconButton>
+                </Tooltip>
                 <Typography
                   variant="h6"
                   noWrap
@@ -128,11 +123,11 @@ const Header = (props) => {
               {name}
             </Typography>
 
-              <Tooltip title="Profile">
-                <IconButton onClick={handleUserinfo} sx={{ mt: -6, ml: '50vw' }}>
-                  <Avatar alt="Remy Sharp" src={user.profilepicture} sx={{ width: "35px", height: '35px' }} />
-                </IconButton>
-              </Tooltip>
+            <Tooltip title="Profile">
+              <IconButton onClick={handleUserinfo} sx={{ mt: -6, ml: '50vw' }}>
+                <Avatar alt="Remy Sharp" src={user.profilepicture} sx={{ width: "35px", height: '35px' }} />
+              </IconButton>
+            </Tooltip>
             <Typography
               variant="h6"
               noWrap

@@ -1,12 +1,13 @@
+## Instructions
+
 ## First Download the Zip File
 
 ## Open VsCode
 
 ## Open Folder through VsCode
 
-## Type `npm install` in the terminal
-
 In the project directory, you can run:
+## Type `npm install` in the terminal
 
 ### `npm start`
 
@@ -27,6 +28,7 @@ Run the following commands to add Material UI to your project.
 
 ### `npm i react-router`
 ### `npm i react-router-dom`
+###   `npm i query-string`
 
 
 ## List of Dependencies required to run the code
@@ -42,6 +44,7 @@ Run the following commands to add Material UI to your project.
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "query-string": "^8.1.0",
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-dom": "^18.2.0",
@@ -79,6 +82,9 @@ Run the following commands to add Material UI to your project.
 }
 
 
+
 `
+
+Note: This website isnt Responsive for now. Due to time constrains, I couldnt complete the CSS part for responsiveness. Sorry for the inconvenience and thanks for this great opportinity. I have learnt several new things during developing the website. 
 
 

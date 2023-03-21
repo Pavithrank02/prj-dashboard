@@ -15,7 +15,7 @@ const Gallery = () => {
           <Sidebar />
         </Grid>
         <Grid gridColumn="span 9" sx={{ marginTop: 9, marginLeft: -2 }} >
-          <Header name={"Gallery"} id={userId}/>
+          <Header name={"Gallery"} id={userId} />
           <Body />
           <Chatbot />
         </Grid>

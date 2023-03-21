@@ -8,7 +8,6 @@ import img from '../assets/image/wave.png'
 
 export const BasicCard = (props) => {
 
-  // const [id, setID] = useState("")
   return (
 
     <Grid sx={{ flexGrow: 1, }} >
@@ -29,12 +28,12 @@ export const BasicCard = (props) => {
             padding: 0,
 
           }} sx={{
-            minWidth: 430, 
-            borderRadius: '30px', 
+            minWidth: 430,
+            borderRadius: '30px',
             height: '600px',
             "&::-webkit-scrollbar": {
               width: 10,
-             
+
             },
             "&::-webkit-scrollbar-track": {
               mt: 13,

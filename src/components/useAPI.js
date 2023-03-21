@@ -5,7 +5,7 @@ const useAPI = () => {
 
   const [users, setUser] = useState("");
 
-  // console.log(users)
+  // Custom Hook 
 
 
   const fetchAPI = async () => {

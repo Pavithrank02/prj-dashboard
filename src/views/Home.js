@@ -7,17 +7,15 @@ import UserInfo from '../components/UserInfo'
 import { useParams } from "react-router-dom";
 
 const Home = (props) => {
-  const userId = useParams();
-  // console.log("id", userId)
-  // console.log("home", user);
+  const userId = useParams(); //retriving URL id to match component
   return (
-    <Grid sx={{ width: 1, maxWidth:'1200', minWidth: 400 }}>
+    <Grid sx={{ width: 1, maxWidth: '1200', minWidth: 400 }}>
       <Grid display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={1}>
         <Grid gridColumn="span 3" sx={{ marginTop: 5, marginLeft: 6 }}>
           <Sidebar />
         </Grid>
         <Grid gridColumn="span 9" sx={{ marginTop: 9, marginLeft: -2 }} >
-          <Header name={"Profile"}  id={userId} />
+          <Header name={"Profile"} id={userId} />
           <UserInfo id={userId} />
           <Chatbot />
         </Grid>

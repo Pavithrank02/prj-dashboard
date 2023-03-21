@@ -16,8 +16,7 @@ import { useNavigate } from 'react-router';
 
 
 const Logout = (props) => {
-  // console.log(props)
-  const { name, profilepicture, email } = props.data
+  const { name, profilepicture, email } = props.data  //destructuring props
   const navigate = useNavigate();
   const user = useAPI()
   const handleSubmit = (id) => {
@@ -26,6 +25,7 @@ const Logout = (props) => {
   }
 
   return (
+    //Displaying Logout dialog box
     <Grid sx={{ flexGrow: 1, }}>
       <Grid container spacing={2}>
         <Grid item xs={5}>
