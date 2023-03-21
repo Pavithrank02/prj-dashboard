@@ -18,26 +18,32 @@ export const BasicCard = (props) => {
         direction="row"
         justifyContent="center"
         alignItems="flex-start"
-
       >
         <Grid xs={4} sx>
           <Card style={{
             overflow: 'scroll',
+            overflowX: 'hidden',
             margin: 0,
             border: '1px',
 
             padding: 0,
 
           }} sx={{
-            minWidth: 430, borderRadius: '30px', height: '600px',
+            minWidth: 430, 
+            borderRadius: '30px', 
+            height: '600px',
             "&::-webkit-scrollbar": {
-              width: 10
+              width: 10,
+             
             },
             "&::-webkit-scrollbar-track": {
-              backgroundColor: "white"
+              mt: 13,
+              mb: 2,
+              backgroundColor: "transparent"
             },
             "&::-webkit-scrollbar-thumb": {
-              backgroundColor: "grey",
+              overflowX: 'hidden',
+              backgroundColor: "lightgrey",
               borderRadius: 1,
               marginTop: '20px'
             }
