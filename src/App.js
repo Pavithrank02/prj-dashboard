@@ -1,5 +1,5 @@
 
-import {BasicCard} from './views/BasicCard';
+import { BasicCard } from './views/BasicCard';
 import './App.css';
 import { Route, Routes } from 'react-router';
 import Home from './views/Home';
@@ -9,15 +9,14 @@ import Todo from './views/Todo';
 
 function App() {
   return (
-    
-        <Routes>
-        <Route path="/" element={<BasicCard />} />
 
-          <Route path="/home/:profile/:id" element={<Home />} />
-          <Route path="/home/:post/:id" element={<Posts />} />
-          <Route path="/home/:gallery/:id" element={<Gallery />} />
-          <Route path="/home/:todo/:id" element={<Todo />} />
-        </Routes>
+    <Routes>
+      <Route path="/" element={<BasicCard />} />
+      <Route path="/profile/:id" element={<Home />} />
+      <Route path="/post/:id" element={<Posts />} />
+      <Route path="/gallery/:id" element={<Gallery />} />
+      <Route path="/todo/:id" element={<Todo />} />
+    </Routes>
 
 
   );

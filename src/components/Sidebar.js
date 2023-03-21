@@ -1,16 +1,18 @@
 
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Grid } from '@mui/material'
 import Typography from '@mui/material/Typography';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import queryString from 'query-string';
-import { useState } from 'react';
-import Collapse from '@mui/material/Collapse';
-
-
+import { useHistory, useLocation } from 'react-router';
 
 const Sidebar = () => {
   const userId = useParams();
+
+  // const history = useHistory();
+  const location = useLocation();
+  // console.log("history", history)
+  console.log("location", location)
+  const path = location.pathname
   const { id, profile } = userId
   console.log("loc", userId);
 
@@ -36,37 +38,38 @@ const Sidebar = () => {
       width: 280, height: 750, color: 'white', borderRadius: 8
     }}>
       <Grid sx={{ marginTop: 35 }}>
-        <Link to={`/home/profile/${id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/profile/${userId.id}`} style={{ textDecoration: 'none' }}>
           <Typography variant="h6" component="h2" sx={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingBottom: '17px', ml: 6, borderBottom: 1, borderColor: "grey.500", width: 190, mt: 4 }}>
             Profile
-            {profile === "profile" &&
+            {path.includes("profile") &&
               handleIcon()
             }
           </Typography>
         </Link>
-        <Link to={`/home/post/${id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/post/${userId.id}`} style={{ textDecoration: 'none' }}>
           <Typography variant="h6" component="h2" sx={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingBottom: '17px', ml: 6, borderBottom: 1, borderColor: "grey.500", width: 190, mt: 2 }}>
             Posts
-            {profile === "post" &&
+            {path.includes("post") &&
               handleIcon()
             }
           </Typography>
         </Link>
-        <Link to={`/home/gallery/${id}`} style={{ textDecoration: 'none' }}>
+        <Link to={`/gallery/${userId.id}`} style={{ textDecoration: 'none' }}>
           <Typography variant="h6" component="h2" sx={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingBottom: '17px', ml: 6, borderBottom: 1, borderColor: "grey.500", width: 190, mt: 2 }}>
             Gallery
-            {profile === "gallery" &&
+            {path.includes("gallery") &&
               handleIcon()
-
             }
-          </Typography> </Link>
-        <Link to={`/home/todo/${id}`} style={{ textDecoration: 'none' }}>
+          </Typography>
+        </Link>
+        <Link to={`/todo/${userId.id}`} style={{ textDecoration: 'none' }}>
           <Typography variant="h6" component="h2" sx={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingBottom: '17px', ml: 6, mt: 2 }}>
             ToDo
-            {profile === "todo" &&
+            {path.includes("todo") &&
               handleIcon()
             }
-          </Typography> </Link>
+          </Typography>
+        </Link>
 
       </Grid>
     </Grid>
