@@ -10,7 +10,7 @@ export const BasicCard = (props) => {
 
   return (
 
-    <Grid sx={{ flexGrow: 1, }} >
+    <Grid sx={{ flexGrow: 1}} >
       <img style={{ width: '1600px', height: '100%', minWidth: '400px' }} src={img} alt="gshs" />
       <Grid container spacing={1}
         marginTop="-400px"
