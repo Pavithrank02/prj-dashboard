@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router';
 
 
 const Logout = (props) => {
-  const { name, profilepicture, email } = props.data  //destructuring props
+  const { name, profilepicture, email } = props.data 
   const navigate = useNavigate();
   const user = useAPI()
   const handleSubmit = (id) => {
