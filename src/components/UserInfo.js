@@ -68,9 +68,6 @@ const UserInfo = (props) => {
                   <Typography sx={{ padding: '7px', fontSize: 20, color: '#5c5b58', fontWeight: 600 }}>{user.website}</Typography>
                 </Grid>
               </Grid>
-              {/* {userdetails.map((e) => {
-                return <Typography sx={{ padding: '8px', justifyContent: 'left', fontSize: 20, color: 'grey' }}>{e}</Typography>
-              })}*/}
               <Typography sx={{ mt: 1, ml: 11, display: 'flex', alignItems: 'center', fontSize: 22, fontWeight: 600, color: 'grey' }}>
                 Company
               </Typography>
