@@ -72,7 +72,7 @@ const UserInfo = (props) => {
                 Company
               </Typography>
               {info && info.map(([key, value]) => {
-                // console.log(value.length)
+    
                 return (
                   <Grid sx={{ display: 'flex', flexDirection: 'row' }}>
                     <Grid sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end' }}>
